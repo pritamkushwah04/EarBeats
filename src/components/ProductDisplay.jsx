@@ -1,11 +1,13 @@
 import React from 'react'
 import DisplayCanvas from './DisplayCanvas'
 import { useEffect, useState } from 'react';
+import { Progress } from "@material-tailwind/react";
+import './ProductDisplay.css';
 
 // import 'heroicons/css/heroicons.css';
 function ProductDisplay() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  
+
   function enterFullscreen() {
     const Display = document.getElementById("productDisplay"); // Get the HTML element
     if (Display.requestFullscreen) {
@@ -19,7 +21,7 @@ function ProductDisplay() {
     }
   };
 
-  function exitFullscreen ()  {
+  function exitFullscreen() {
     if (document.exitFullscreen) {
       document.exitFullscreen();
     } else if (document.mozCancelFullScreen) {
@@ -31,15 +33,12 @@ function ProductDisplay() {
     }
   };
 
-  function toggleFullscreen(){
-    const fullScreenIcon = document.getElementById("fullScreenIcon");
-    if(document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement ||
-      document.msFullscreenElement){
+  function toggleFullscreen() {
+    if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement ||
+      document.msFullscreenElement) {
       exitFullscreen();
-      // fullScreenIcon.className="absolute bottom-0 sm:bottom-12 right-0 "
-    }else{
+    } else {
       enterFullscreen();
-      // fullScreenIcon.className="absolute bottom-0 right-0 z-10"
     }
   }
 
@@ -65,7 +64,14 @@ function ProductDisplay() {
     <div className='basis-full md:basis-2/5 flex-shrink '>
       <div className='w-full  sm:w-fit sm:m-auto lg:mx-4 lg:fixed   '>
         <div id='productDisplay' className=' w-full h-96 sm:mt-4 sm:w-96 sm:h-96 rounded bg-red-200 relative'>
-          <DisplayCanvas/>
+          <DisplayCanvas />
+          {/* <Progress id='progressbar' className='absolute top-44 bottom-4 z-1' value={50} mx-12 color='amber' /> */}
+          <div id='progress-container' className='absolute top-44 z-1 w-full animate-pulse'>
+            <div className='flex items-center justify-center'>
+               <label for="file" className='text-white align'>Loading Model...</label>
+            </div>
+            <progress  id='progressbar'  value='0' max='100' color='amber'></progress>
+          </div>
           <div id='fullScreenIcon' onClick={toggleFullscreen} className='absolute bottom-0 right-0'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
           </svg>

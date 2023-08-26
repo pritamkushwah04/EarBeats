@@ -12,11 +12,19 @@ function DisplayCanvas() {
     glftLoader.load('./assets/headphones.glb', (gltfScene) => {
       gltfScene.scene.scale.set(1, 1, 1);
       gltfScene.scene.position.set(0, -1, 0);
-      // gltfScene.scene.rotateY+= 10;
-      // gltfScene.scene.rotation.y=40;
       gltfScene.scene.name="headphone1"
-      // console.log(gltfScene.scene);
       test.scene.add(gltfScene.scene);
+      const progressbar= document.getElementById("progress-container");
+      progressbar.className="hidden"; 
+    },
+    (xhr) => {
+      // Loading progress callback
+      const percentComplete = (xhr.loaded / xhr.total) * 100;
+      const progressbar= document.getElementById("progressbar");
+      progressbar.value=percentComplete;
+    },
+    (error) => {
+      console.error('An error occurred while loading the model:', error);
     });
     test.animate();
     
@@ -25,7 +33,10 @@ function DisplayCanvas() {
 
 
   return (
+    <>
     <canvas id="myThreeJsCanvas"  className='sm:rounded-t'/>
+    </>
+    
 
   )
 }
