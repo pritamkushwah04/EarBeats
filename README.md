@@ -17,3 +17,5 @@ Earbeats is a static single-page website that transforms the way users explore a
 - **Full-Screen Mode**: Take your exploration to the next level with a full-screen mode that allows for a closer examination of product details.
 
 This project transcends conventional online shopping, enhancing the user experience and empowering customers to make more confident purchasing decisions. Say goodbye to flat images and hello to a new dimension in audio product exploration.
+
+Experience Earbeats live at [Earbeats](https://master--lively-starlight-7fd8c8.netlify.app/).
