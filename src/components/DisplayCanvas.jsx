@@ -21,7 +21,9 @@ function DisplayCanvas() {
       // Loading progress callback
       const percentComplete = (xhr.loaded / xhr.total) * 100;
       const progressbar= document.getElementById("progressbar");
-      progressbar.value=percentComplete;
+      if(percentComplete){
+        progressbar.value=percentComplete;
+      }
     },
     (error) => {
       console.error('An error occurred while loading the model:', error);
