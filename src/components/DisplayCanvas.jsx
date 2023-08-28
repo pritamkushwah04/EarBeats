@@ -21,7 +21,9 @@ function DisplayCanvas() {
       // Loading progress callback
       const percentComplete = (xhr.loaded / xhr.total) * 100;
       const progressbar= document.getElementById("progressbar");
+      
       if(percentComplete){
+        console.log(percentComplete);
         progressbar.value=percentComplete;
       }
     },
