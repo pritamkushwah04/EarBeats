@@ -22,7 +22,7 @@ function DisplayCanvas() {
       const percentComplete = (xhr.loaded / xhr.total) * 100;
       const progressbar= document.getElementById("progressbar");
       
-      if(percentComplete){
+      if(percentComplete !=Infinity){
         console.log(percentComplete);
         progressbar.value=percentComplete;
       }
