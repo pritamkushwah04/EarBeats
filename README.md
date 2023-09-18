@@ -8,7 +8,7 @@
 
 ## Description
 
-Earbeats is a static single-page website that transforms the way users explore and shop for audio products. Unlike traditional marketplaces that offer only static images of products, Earbeats employs the power of Three.js to provide an immersive 3D experience.
+Earbeats is a static single-page website that transforms the way users explore and shop for audio products. Unlike traditional marketplaces that offer only static images of products, Earbeats employs the power of Three.js to provide an **immersive 3D experience**.
 
 **Key Features:**
 
