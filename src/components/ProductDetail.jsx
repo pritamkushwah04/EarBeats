@@ -6,7 +6,7 @@ function ProductDetail() {
   return (
     <div className='basis-full md:basis-3/5 flex-shrink '>
       <h2 className='p-2 text-2xl text-black font-mediumbold ' >Tony PS5 PULSE 3D Wireless Headset  (White, On the Ear)</h2>
-      <h5 className='p-2 text-2xl text-black font-bold '>₹7,429</h5>
+      <h5 className='p-2 text-2xl text-black font-bold '>₹7,499</h5>
       <div className='border border-slate-200 divide-y divide-slate-200 mx-1 mb-4'>
         <h4 className='p-4 text-black font-semibold text-black font-semibold text-black font-semibold'>Product Description</h4>
         <div className=''>
